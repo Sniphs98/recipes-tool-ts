@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { dialogs } from "svelte-dialogs";
 
     function createRecipe(){
         alert('ich bin da!')
