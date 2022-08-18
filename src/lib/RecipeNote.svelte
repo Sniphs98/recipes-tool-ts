@@ -49,6 +49,6 @@
     }
 
     .container {
-        padding: 2px 16px;
+        padding: 1rem;
     }
 </style>
