@@ -2,8 +2,7 @@
   import RecipeNote from "./lib/RecipeNote.svelte";
   import FloatingButton from "./lib/FloatingButton.svelte";
 
-
-  let modal
+  let modal;
 </script>
 
 <div class="container">
@@ -12,12 +11,11 @@
 
 <FloatingButton />
 
-
-
 <style>
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 20px;
   }
 </style>
