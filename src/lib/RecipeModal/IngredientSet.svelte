@@ -1,5 +1,5 @@
-<div class="row gy-2">
-    <div class="col-7 col-md-6">
+<div class="row align-items-center">
+    <div class="col-12 col-xl-6">
         <div class="input-group ">
             <input
                 type="text"
@@ -24,10 +24,10 @@
 
         </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-xl-6">
         <div class="form-floating">
             <textarea
-                class="form-control"
+                class="form-control textArea"
                 placeholder="Leave a comment here"
                 id="floatingTextarea2"
                 style="height: 60px"
@@ -36,3 +36,10 @@
         </div>
     </div>
 </div>
+
+<style lang="scss">
+    .textArea{
+        margin-top: 2px;
+        margin-bottom: 6px;
+    }
+</style>

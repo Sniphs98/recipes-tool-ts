@@ -3,10 +3,43 @@
   import FloatingButton from "./lib/FloatingButton.svelte";
 
   let modal;
+
 </script>
 
 <div class="container">
   <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+  <RecipeNote />
+
 </div>
 
 <FloatingButton />
@@ -15,7 +48,7 @@
   .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+    justify-content: space-around;
   }
+  
 </style>

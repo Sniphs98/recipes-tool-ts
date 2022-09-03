@@ -2,7 +2,12 @@
 
 import IngredientSet from "./IngredientSet.svelte";
 
-    
+function addComponent(){
+    number_of_rendert_componetes = number_of_rendert_componetes + 1
+}
+
+let number_of_rendert_componetes = 1
+
 
 </script>
 
@@ -25,9 +30,11 @@ import IngredientSet from "./IngredientSet.svelte";
                 />
             </div>
             <div class="modal-body">
-                <IngredientSet/>
+                {#each Array(number_of_rendert_componetes) as number, i}
+                    <IngredientSet/>
+                {/each}
                 <div class="row" style="margin: 1px;">
-                    <button type="button" class="btn btn-primary"> + </button>
+                    <button type="button" class="btn btn-primary" on:click="{addComponent}"> + </button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -43,7 +50,3 @@ import IngredientSet from "./IngredientSet.svelte";
         </div>
     </div>
 </div>
-
-<style lang="scss">
-
-</style>
