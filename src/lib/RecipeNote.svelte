@@ -1,6 +1,9 @@
 <script lang="ts">
-    
-    import RecipeModal from "./RecipeModal/Modal.svelte"
+import IngredientSet from "./RecipeModal/IngredientSet.svelte";
+
+import RecipeModal from "./RecipeModal/Modal.svelte"
+
+
 
     let dish_name = 'Test Greicht'
 

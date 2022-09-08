@@ -4,8 +4,8 @@
             <input
                 type="text"
                 class="form-control "
-                placeholder="Username"
-                aria-label="Username"
+                placeholder="Name"
+                aria-label="Name"
                 aria-describedby="basic-addon1"
             />
             <select class="form-select" aria-label="Default select example">

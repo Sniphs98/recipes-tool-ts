@@ -1,14 +1,11 @@
 <script lang="ts">
+    import IngredientSet from "./IngredientSet.svelte";
 
-import IngredientSet from "./IngredientSet.svelte";
+    function addComponent() {
+        number_of_rendert_componetes = number_of_rendert_componetes + 1;
+    }
 
-function addComponent(){
-    number_of_rendert_componetes = number_of_rendert_componetes + 1
-}
-
-let number_of_rendert_componetes = 1
-
-
+    let number_of_rendert_componetes = 1;
 </script>
 
 <div
@@ -21,7 +18,11 @@ let number_of_rendert_componetes = 1
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <input class="modal-title form-control" placeholder="Rezept Name" id="exampleModalLabel"/>
+                <input
+                    class="modal-title form-control"
+                    placeholder="Rezept Name"
+                    id="exampleModalLabel"
+                />
                 <button
                     type="button"
                     class="btn-close"
@@ -31,10 +32,16 @@ let number_of_rendert_componetes = 1
             </div>
             <div class="modal-body">
                 {#each Array(number_of_rendert_componetes) as number, i}
-                    <IngredientSet/>
+                    <IngredientSet />
                 {/each}
                 <div class="row" style="margin: 1px;">
-                    <button type="button" class="btn btn-primary" on:click="{addComponent}"> + </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        on:click={addComponent}
+                    >
+                        +
+                    </button>
                 </div>
             </div>
             <div class="modal-footer">
