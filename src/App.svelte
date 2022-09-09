@@ -2,7 +2,6 @@
   import RecipeNote from "./lib/RecipeNote.svelte";
   import FloatingButton from "./lib/FloatingButton.svelte";
   import Loading from "./lib/Loading.svelte";
-import { get } from "svelte/store";
 
   const backendURL = "http://localhost:8080/recipe";
 
@@ -29,7 +28,7 @@ import { get } from "svelte/store";
     <Loading />
   {:then recipes}
     {#each recipes as recipe}
-      <RecipeNote />
+      <RecipeNote {recipe} />
     {/each}
   {/await}
 </div>
