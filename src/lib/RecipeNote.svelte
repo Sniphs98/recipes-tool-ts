@@ -1,4 +1,5 @@
 <script lang="ts">
+
     export let recipe;
 
     let dish_name = Object.values(recipe)[1];
@@ -11,15 +12,17 @@
         schuss = "Schuss",
         stück = "Stück",
         priese = "Priese",
+        gramm = "GRAM"
     }
 
     function showRecipe() {
-
+        console.log(dish_ingredients)
+        
     }
 </script>
 
 <div class="card" style="width: 18rem;" on:click={showRecipe}>
-    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <img class="card-img-top">
     <div class="card-body">
         <div class="card-text">
             <h2>
@@ -36,6 +39,7 @@
     </div>
 </div>
 
+
 <style>
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -47,5 +51,10 @@
 
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top{
+        height: 120px;
+        width: 100%;
     }
 </style>

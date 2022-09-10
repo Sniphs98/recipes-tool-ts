@@ -1,6 +1,7 @@
 <script lang="ts">
     import IngredientSet from "./IngredientSet.svelte";
 
+
     function addComponent() {
         number_of_rendert_componetes = number_of_rendert_componetes + 1;
     }

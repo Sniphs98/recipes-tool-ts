@@ -1,59 +1,164 @@
-<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<div class="loader">
+    <div class="tall-stack">
+        <div class="butter falling-element" />
+        <div class="pancake falling-element" />
+        <div class="pancake falling-element" />
+        <div class="pancake falling-element" />
+        <div class="pancake falling-element" />
+        <div class="pancake falling-element" />
+        <div class="pancake falling-element" />
+        <div class="plate">
+            <div class="plate-bottom" />
+            <div class="shadow" />
+        </div>
+    </div>
+</div>
+
+<footer class="footer" />
 
 <style lang="scss">
-    .lds-ellipsis {
-        display: inline-block;
-        position: relative;
-        width: 80px;
-        height: 80px;
+    $color-pancake: #c4b26f;
+    $color-pancake: #d8cb9f;
+    $color-pancake-dark: darken($color-pancake, 50%);
+    $color-butter: #eadd4d;
+    $color-bg: #249d98;
+    $color-plate: #d3ebea;
+
+    $animation-duration: 6000ms;
+
+    body {
+        background: $color-bg;
+        overflow: hidden;
     }
-    .lds-ellipsis div {
+
+    .loader {
         position: absolute;
-        top: 33px;
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        background: rgb(58, 58, 58);
-        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
-    .lds-ellipsis div:nth-child(1) {
-        left: 8px;
-        animation: lds-ellipsis1 0.6s infinite;
+
+    .tall-stack {
+        animation: slide-plate-out $animation-duration infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
     }
-    .lds-ellipsis div:nth-child(2) {
-        left: 8px;
-        animation: lds-ellipsis2 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(3) {
-        left: 32px;
-        animation: lds-ellipsis2 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(4) {
-        left: 56px;
-        animation: lds-ellipsis3 0.6s infinite;
-    }
-    @keyframes lds-ellipsis1 {
-        0% {
-            transform: scale(0);
+
+    .plate {
+        width: 230px;
+        height: 14px;
+        background: $color-plate;
+        position: relative;
+        border-radius: 6px 6px 2rem 2rem;
+        animation: slide-plate-in $animation-duration infinite;
+        transform: translateX(100vw);
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+
+        .plate-bottom {
+            content: "";
+            display: block;
+            height: 50%;
+            width: 140px;
+            background: darken($color-plate, 4%);
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -70px;
+            border-radius: 0 0 1rem 1rem;
+            z-index: 1;
         }
+
+        .shadow {
+            position: absolute;
+            top: 130%;
+            left: 50%;
+            margin-left: -90px;
+            z-index: 0;
+            width: 180px;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 80%;
+            z-index: 0;
+        }
+    }
+
+    .butter {
+        width: 48px;
+        height: 12px;
+        background: $color-butter;
+        margin: auto;
+        border-radius: 2px;
+        box-shadow: inset 0 -2px 0 2px rgba($color-pancake-dark, 0.1);
+    }
+
+    .pancake {
+        width: 200px;
+        height: 14px;
+        background: $color-pancake;
+        border-radius: 1rem;
+        box-shadow: inset 0 -2px 0 3px rgba($color-pancake-dark, 0.1);
+        margin: auto;
+    }
+
+    .falling-element {
+        transform: translateY(-100vh);
+        animation-timing-function: ease-in;
+        animation-fill-mode: forward;
+        animation: element-drop $animation-duration infinite;
+        position: relative;
+    }
+
+    $elements: 8;
+    $drop-delay: 0.4s;
+    $drop-interval: 0.22;
+    @for $i from 0 to $elements {
+        .falling-element:nth-child(#{$elements - $i}) {
+            animation-delay: ($drop-interval * $i) + $drop-delay;
+        }
+    }
+
+    @keyframes element-drop {
+        0%,
         100% {
-            transform: scale(1);
+            transform: translateY(-100vh) scaleY(0.7);
+            opacity: 1;
+        }
+        11% {
+            transform: translateY(20%) scaleY(1.2);
+        }
+        13% {
+            transform: translateY(-30%) scaleY(0.9);
+        }
+        14%,
+        67% {
+            transform: translateY(0%) scaleY(1);
+            opacity: 1;
+        }
+        68% {
+            opacity: 0;
+            transition: none;
+            transform: translateY(-100vh) scaleY(0.7);
         }
     }
-    @keyframes lds-ellipsis3 {
+
+    @keyframes slide-plate-in {
         0% {
-            transform: scale(1);
+            transform: translateX(100vw);
         }
+        15%,
         100% {
-            transform: scale(0);
+            transform: translateX(0);
         }
     }
-    @keyframes lds-ellipsis2 {
-        0% {
-            transform: translate(0, 0);
+
+    @keyframes slide-plate-out {
+        65% {
+            transform: translateX(0);
         }
+        85%,
         100% {
-            transform: translate(24px, 0);
+            transform: translateX(-100vw);
         }
     }
 </style>
