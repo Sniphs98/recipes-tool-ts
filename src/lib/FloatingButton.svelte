@@ -3,7 +3,7 @@
 </script>
 
 <!-- Button trigger modal -->
-<a href="#" class="float" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<a href="#" class="float" data-bs-toggle="modal" data-bs-target="#recipeModal">
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

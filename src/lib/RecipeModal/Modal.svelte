@@ -11,9 +11,9 @@
 
 <div
     class="modal fade my-float"
-    id="exampleModal"
+    id="recipeModal"
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="recipeModalLabel"
     aria-hidden="true"
 >
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -22,7 +22,7 @@
                 <input
                     class="modal-title form-control"
                     placeholder="Rezept Name"
-                    id="exampleModalLabel"
+                    id="recipeModalLabel"
                 />
                 <button
                     type="button"
