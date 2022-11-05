@@ -2,9 +2,10 @@
   import RecipeNote from "./lib/RecipeNote.svelte";
   import FloatingButton from "./lib/FloatingButton.svelte";
   import Loading from "./lib/Loading.svelte";
+  import Modal from "./lib/Modal/Modal.svelte"
 
+  let modal
   const backendURL = "http://localhost:8080/recipe";
-
   let promise = Promise.resolve([]);
   getRecipes()
 
@@ -20,6 +21,7 @@
 
   function getRecipes() {
     promise = fetchUsers("/getAll");
+
   }
 </script>
 
